@@ -28,6 +28,10 @@ struct Matrix
     {
         memset(a, 0, sizeof a);
     }
+    void Build() 
+    {
+        a[1][1]=a[2][2]=1;
+    }
 };
 Matrix operator*(Matrix x, Matrix y)
 {
@@ -38,7 +42,9 @@ Matrix operator*(Matrix x, Matrix y)
     res.a[2][2] = (x.a[2][1] * y.a[1][2] % P + x.a[2][2] * y.a[2][2] % P) % P;
     return res;
 }
-
+Matrix qpow(Matrix bs, int y) {
+    Matrix res;res.Build();
+}
 
 int main()
 {
